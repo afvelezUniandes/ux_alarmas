@@ -1,5 +1,6 @@
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
+import BackgroundWrapper from "@/components/ui/backgroundWrapper";
 import { useRouter } from "expo-router";
 import React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
@@ -8,30 +9,34 @@ export default function RecordAlarmCheckScreen() {
   const router = useRouter();
 
   return (
-    <ThemedView style={styles.container}>
-      {/* Tarjeta de confirmación */}
-      <ThemedView style={styles.card}>
-        <ThemedText style={styles.message}>
-          Se ha configurado y activado la alarma de las 5:30 a.m. con la canción{" "}
-          <ThemedText style={styles.bold}>Milagros de Karol G</ThemedText> y con
-          aviso de linterna intermitente
-        </ThemedText>
+    <BackgroundWrapper>
+      <ThemedView style={styles.container}>
+        {/* Tarjeta de confirmación */}
+        <ThemedView style={styles.card}>
+          <ThemedText style={styles.message}>
+            Se ha configurado y activado la alarma de las 5:30 a.m. con la
+            canción Milagros de Karol G y con aviso de linterna intermitente
+          </ThemedText>
 
-        {/* Botones Cancelar y Aplicar */}
-        <View style={styles.actions}>
-          <TouchableOpacity onPress={() => router.back()} style={styles.action}>
-            <ThemedText style={styles.cancel}>Cancelar</ThemedText>
-          </TouchableOpacity>
-          <View style={styles.divider} />
-          <TouchableOpacity
-            onPress={() => router.push("/(tabs)")}
-            style={styles.action}
-          >
-            <ThemedText style={styles.apply}>Aplicar</ThemedText>
-          </TouchableOpacity>
-        </View>
+          {/* Botones Cancelar y Aplicar */}
+          <View style={styles.actions}>
+            <TouchableOpacity
+              onPress={() => router.back()}
+              style={styles.action}
+            >
+              <ThemedText style={styles.cancel}>Cancelar</ThemedText>
+            </TouchableOpacity>
+            <View style={styles.divider} />
+            <TouchableOpacity
+              onPress={() => router.push("/(tabs)")}
+              style={styles.action}
+            >
+              <ThemedText style={styles.apply}>Aplicar</ThemedText>
+            </TouchableOpacity>
+          </View>
+        </ThemedView>
       </ThemedView>
-    </ThemedView>
+    </BackgroundWrapper>
   );
 }
 
@@ -41,6 +46,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+    backgroundColor: "transparent",
   },
   card: {
     backgroundColor: "#fff",
@@ -56,7 +62,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "center",
     marginBottom: 20,
-    color: "#0C0C0C",
+    color: "#0C4A6E",
+    fontWeight: "700",
   },
   bold: {
     fontWeight: "700",
