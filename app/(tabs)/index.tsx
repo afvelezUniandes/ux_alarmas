@@ -4,6 +4,7 @@ import { MicAlarm } from "@/components/ui/alarm/mic";
 import { Ionicons } from "@expo/vector-icons";
 
 import { Stats } from "@/components/ui/alarm/stats";
+import { Sync } from "@/components/ui/alarm/sync";
 import BackgroundWrapper from "@/components/ui/backgroundWrapper";
 import React, { useState } from "react";
 import { StyleSheet, Switch } from "react-native";
@@ -32,9 +33,9 @@ export default function AlarmScreen() {
             <Stats />
           </ThemedView>
           <ThemedView style={styles.iconGroup}>
+            <Sync />
             <Ionicons name="add" size={24} color="#0C4A6E" />
             <Ionicons name="ellipsis-vertical" size={24} color="#0C4A6E" />
-            <Ionicons name="settings-outline" size={24} color="#0C4A6E" />
           </ThemedView>
         </ThemedView>
 
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
   iconRow: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 80,
+    marginTop: 120,
     paddingHorizontal: 20,
     backgroundColor: "transparent",
   },
@@ -99,7 +100,6 @@ const styles = StyleSheet.create({
   alarmLabel: {
     color: "#FF9800",
     fontSize: 14,
-    marginBottom: 4,
     fontWeight: "600",
   },
   alarmRow: {
@@ -110,6 +110,6 @@ const styles = StyleSheet.create({
   alarmTime: {
     fontSize: 22,
     fontWeight: "700",
-    color: "#0C0C0C",
+    color: "#0C4A6E",
   },
 });

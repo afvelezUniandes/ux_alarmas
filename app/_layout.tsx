@@ -25,6 +25,9 @@ export default function RootLayout() {
           name="recordAlarmCheck"
           options={{ headerShown: false }}
         />
+        <Stack.Screen name="syncAlarm" options={{ headerShown: false }} />
+        <Stack.Screen name="syncAlarmCheck" options={{ headerShown: false }} />
+        <Stack.Screen name="statsAlarm" options={{ headerShown: false }} />
       </Stack>
 
       <StatusBar style="auto" />
