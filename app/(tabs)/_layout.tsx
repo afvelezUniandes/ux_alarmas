@@ -98,6 +98,6 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
   },
   iconContainerActive: {
-    backgroundColor: "#D6F5E3",
+    backgroundColor: "#3AB8C4",
   },
 });
